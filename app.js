@@ -1,3 +1,11 @@
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(process.env.PORT || 8000);
+console.log('Server running');
+
+
 var mongoose = require('mongoose');
 
 // 定義フェーズ
@@ -10,16 +18,18 @@ var UserSchema = new Schema({
 mongoose.model('User', UserSchema);
 
 // 使用フェーズ
-mongoose.connect('mongodb://localhost/negativeDegrees4');
+var db_uri = 'mongodb://localhost/negativeDegrees4' || process.env.MONGOLAB_URI;
+db_uri = "mongodb://heroku_6cnq9nh9:nfp76sfae4a3e6c19gkolh0rlt@ds161038.mlab.com:61038/heroku_6cnq9nh9";
+mongoose.connect(db_uri);
 //mongoose.connect('mongodb://localhost/evaluation');
 
 var User = mongoose.model('User');
 var user = new User();
 user.name  = 'KrdLab';
 user.point = 777;
-/*user.save(function(err) {
+user.save(function(err) {
   if (err) { console.log(err); }
-});*/
+});
 
 // ※注意：イベント駆動
 

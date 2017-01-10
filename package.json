@@ -4,11 +4,19 @@
   "description": "mongo\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dtest for\u001b[Cmongo",
   "main": "app.js",
   "scripts": {
-    "test": "node"
+    "test": "node app.js"
   },
   "author": "katsuki",
   "license": "ISC",
   "dependencies": {
     "mongoose": "^4.7.5"
+  },
+  "engines": {
+    "node": "6.2.1",
+    "npm": "3.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hungrykirby/mongo.git"
   }
 }
