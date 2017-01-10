@@ -39,7 +39,7 @@ User.find({}, function(err, docs) {
       console.log(docs[i]);
     }
     mongoose.disconnect()  // mongodbへの接続を切断
-    process.exit()         // node.js終了
+    //process.exit()         // node.js終了
   } else {
     console.log("find error")
   }
