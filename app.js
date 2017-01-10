@@ -1,11 +1,3 @@
-var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
-}).listen(process.env.PORT || 8000);
-console.log('Server running');
-
-
 var mongoose = require('mongoose');
 
 // 定義フェーズ
@@ -18,10 +10,17 @@ var UserSchema = new Schema({
 mongoose.model('User', UserSchema);
 
 // 使用フェーズ
-var db_uri = 'mongodb://localhost/negativeDegrees4' || process.env.MONGOLAB_URI;
-db_uri = "mongodb://heroku_6cnq9nh9:nfp76sfae4a3e6c19gkolh0rlt@ds161038.mlab.com:61038/heroku_6cnq9nh9";
+//var db_uri = 'mongodb://localhost/negativeDegrees4';
+var db_uri = "mongodb://heroku_6cnq9nh9:nfp76sfae4a3e6c19gkolh0rlt@ds161038.mlab.com:61038/heroku_6cnq9nh9";
 mongoose.connect(db_uri);
 //mongoose.connect('mongodb://localhost/evaluation');
+
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(process.env.PORT || 8000);
+console.log('Server running');
 
 var User = mongoose.model('User');
 var user = new User();
