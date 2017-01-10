@@ -1,0 +1,14 @@
+{
+  "name": "mongotest",
+  "version": "0.0.1",
+  "description": "mongo\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dtest for\u001b[Cmongo",
+  "main": "app.js",
+  "scripts": {
+    "test": "node"
+  },
+  "author": "katsuki",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^4.7.5"
+  }
+}
